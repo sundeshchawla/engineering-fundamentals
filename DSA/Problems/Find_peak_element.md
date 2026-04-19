@@ -1,0 +1,35 @@
+pattern:
+    binary search
+
+
+
+
+key here is see if we areon increasing slope or decreading slope, adjust according to that.
+final answer would be where high == low meet. therefore the loop is
+
+low < high   AND NOT        low <= high
+
+
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        int low=0, high=nums.size()-1,mid;
+    
+        while(low<high)
+        {
+            mid=low+ (high-low)/2;
+
+
+            if(nums[mid] < nums[mid+1])
+            {
+                low= mid+1;
+            }
+            else
+                high = mid;
+
+        }
+
+        return low;
+    }
+};

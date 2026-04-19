@@ -18,6 +18,17 @@ mid = lo + (hi - lo) / 2 — always. Overflow-safe.
 Loop condition lo <= hi for exact match. lo < hi for left-boundary problems.
 
 
+Binary Search — extended forms summary:
+
+Classic          → sorted array, find value         → lo <= hi
+Peak Element     → unsorted, follow slope gradient  → lo < hi
+2D Matrix        → map 2D → 1D with mid/n, mid%n    → lo <= hi
+Answer Space     → search over possible answers     → lo < hi
+Median partition → search partition point           → lo <= hi
+
+All share: mid = lo + (hi-lo)/2, eliminate half each step
+
+
 Template
 
 1. classic
